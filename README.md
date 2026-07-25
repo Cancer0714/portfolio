@@ -1,4 +1,4 @@
-<h1>アプリ概要<h1>
+<h1>アプリ概要</h1>
 <br>ワンクリック操作で、和音を簡単に組み立てられるアプリ
 <h1>設計ドキュメント</h1>
 <br>[要件定義・基本設計・詳細設計の一覧_Googleスプレッドシート](https://docs.google.com/spreadsheets/d/1a9OvSv8_YOCDU5frkIitncBvOq4bCQJL78d_ViD5lyA/edit?usp=sharing)
