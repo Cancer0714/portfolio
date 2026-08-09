@@ -72,6 +72,30 @@ export const CHORD_DISPLAY_NAMES: Record<ChordName, string> = {
   'F#m-5': 'F♯m♭5',
 }
 
+export const CHORD_COLORS: Record<ChordName, string> = {
+  C: 'bg-red-500',
+  Cm: 'bg-red-700',
+  D: 'bg-yellow-500',
+  Dm: 'bg-orange-500',
+  'Dm-5': 'bg-orange-600',
+  Em: 'bg-green-500',
+  Eb: 'bg-green-300',
+  F: 'bg-purple-500',
+  Fm: 'bg-purple-700',
+  G: 'bg-blue-500',
+  Gm: 'bg-blue-700',
+  Am: 'bg-pink-500',
+  'Am-5': 'bg-pink-700',
+  Bm: 'bg-gray-500',
+  'Bm-5': 'bg-gray-600',
+  Ab: 'bg-amber-700',
+  Bb: 'bg-yellow-600',
+  Bbm: 'bg-amber-800',
+  Db: 'bg-purple-300',
+  'F#m': 'bg-cyan-500',
+  'F#m-5': 'bg-cyan-700',
+}
+
 export const CHORD_LIST: ChordName[] = [
   'C',
   'Dm',

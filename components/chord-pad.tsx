@@ -1,6 +1,6 @@
 'use client'
 
-import { CHORD_DISPLAY_NAMES, CHORD_SECTIONS, type ChordName } from '@/lib/chords'
+import { CHORD_COLORS, CHORD_DISPLAY_NAMES, CHORD_SECTIONS, type ChordName } from '@/lib/chords'
 import { cn } from '@/lib/utils'
 
 type ChordPadProps = {
@@ -21,9 +21,10 @@ export function ChordPad({ activeChord, onChordClick }: ChordPadProps) {
                 type="button"
                 onClick={() => onChordClick(chord)}
                 className={cn(
-                  'flex h-12 items-center justify-center rounded-lg border border-border bg-card text-base font-medium text-card-foreground transition-colors',
-                  'hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-                  activeChord === chord && 'border-primary bg-primary text-primary-foreground',
+                  'flex h-12 items-center justify-center rounded-lg border-2 text-base font-medium text-white transition-colors',
+                  'hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+                  CHORD_COLORS[chord],
+                  activeChord === chord && 'border-white ring-2 ring-white',
                 )}
               >
                 {CHORD_DISPLAY_NAMES[chord]}
