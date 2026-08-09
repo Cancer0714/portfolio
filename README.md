@@ -5,7 +5,7 @@
 <h1>サイトURL</h1>
 <br>https://chordscreate.vercel.app/
 <h1>サイトイメージ</h1>
-![アプリ画面](./docs/アプリ画面.png)
+![アプリ画面](../docs/アプリ画面.png)
 <h1>使用技術</h1>
 Next.js、supabase、Tone.js
 <h1>機能一覧</h1>
