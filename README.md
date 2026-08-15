@@ -1,10 +1,10 @@
 <h1>アプリ概要</h1>
 <br>Next.jsとSupabaseを用いて作成した、音楽知識のない人でもコード進行を簡単に組み立てられるアプリです。
 <h1>設計ドキュメント</h1>
-<br>[要件定義・基本設計・詳細設計の一覧_Googleスプレッドシート](https://docs.google.com/spreadsheets/d/1a9OvSv8_YOCDU5frkIitncBvOq4bCQJL78d_ViD5lyA/edit?usp=sharing)
-<br>[テスト設計・実施/追加機能テスト実施書_Google巣プレっとシート](https://docs.google.com/spreadsheets/d/1v-X855_YKpmca0BavUy4Gc9532Dzpo3kNtdpMRLs8QA/edit?usp=sharing)
+<a href="https://docs.google.com/spreadsheets/d/1a9OvSv8_YOCDU5frkIitncBvOq4bCQJL78d_ViD5lyA/edit?usp=sharing" target="_blank">要件定義・基本設計・詳細設計の一覧_Googleスプレッドシート</a>
+<br><a href="https://docs.google.com/spreadsheets/d/1v-X855_YKpmca0BavUy4Gc9532Dzpo3kNtdpMRLs8QA/edit?usp=sharing" target="_blank">テスト設計・実施/追加機能テスト実施書_Googleスプレットシート</a>
 <h1>サイトURL</h1>
-<br>https://chordscreate.vercel.app/
+https://chordscreate.vercel.app/
 <h1>サイトイメージ</h1>
 <img src="https://raw.githubusercontent.com/Cancer0714/portfolio/main/docs/%E3%82%A2%E3%83%97%E3%83%AA%E7%94%BB%E9%9D%A2.png" alt="アプリ画面" />
 <h1>使用技術</h1>
