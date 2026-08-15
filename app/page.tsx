@@ -1,4 +1,3 @@
-import { redirect } from 'next/navigation'
 import { ChordApp } from '@/components/chord-app'
 import { createClient } from '@/lib/supabase/server'
 import { getProgressions } from '@/app/actions'
@@ -9,13 +8,12 @@ export default async function Page() {
     data: { user },
   } = await supabase.auth.getUser()
 
-  if (!user) redirect('/auth/login')
-
-  const progressions = await getProgressions()
+  const progressions = user ? await getProgressions() : []
 
   return (
     <ChordApp
-      userEmail={user.email ?? 'ユーザー'}
+      userEmail={user?.email ?? 'ゲスト'}
+      isAuthenticated={Boolean(user)}
       initialProgressions={progressions}
     />
   )

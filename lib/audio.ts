@@ -7,8 +7,12 @@ export type Waveform = 'sine' | 'triangle' | 'square' | 'sawtooth'
 
 let synth: Tone.PolySynth | null = null
 let currentWaveform: Waveform = 'triangle'
+let currentVolume = -8
 
-async function getSynth(waveform: Waveform = 'triangle'): Promise<Tone.PolySynth> {
+async function getSynth(
+  waveform: Waveform = 'triangle',
+  volume = -8,
+): Promise<Tone.PolySynth> {
   await Tone.start()
 
   if (!synth || currentWaveform !== waveform) {
@@ -17,9 +21,11 @@ async function getSynth(waveform: Waveform = 'triangle'): Promise<Tone.PolySynth
       oscillator: { type: waveform },
       envelope: { attack: 0.02, decay: 0.15, sustain: 0.4, release: 0.6 },
     }).toDestination()
-    synth.volume.value = -8
     currentWaveform = waveform
   }
+
+  currentVolume = volume
+  synth.volume.value = currentVolume
 
   return synth
 }
@@ -33,8 +39,9 @@ export async function playChord(
   chord: ChordName,
   duration = '0.8n',
   waveform: Waveform = 'triangle',
+  volume = -8,
 ) {
-  const s = await getSynth(waveform)
+  const s = await getSynth(waveform, volume)
   const notes = CHORD_NOTES[chord]
   playChordNotes(s, notes, duration)
 }
@@ -50,11 +57,12 @@ export async function playSequence(
   opts: {
     bpm?: number
     waveform?: Waveform
+    volume?: number
     onStep?: (index: number | null) => void
   } = {},
 ): Promise<PlaybackHandle> {
-  const { bpm = 90, waveform = 'triangle', onStep } = opts
-  const s = await getSynth(waveform)
+  const { bpm = 90, waveform = 'triangle', volume = -8, onStep } = opts
+  const s = await getSynth(waveform, volume)
 
   const beatMs = (60 / bpm) * 1000 * 2 // one chord per two beats (half note)
   const duration = (beatMs / 1000) * 0.9

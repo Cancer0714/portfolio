@@ -33,12 +33,6 @@ export async function updateSession(request: NextRequest) {
     },
   )
 
-  // Do not run code between createServerClient and
-  // supabase.auth.getUser(). A simple mistake could make it very hard to debug
-  // issues with users being randomly logged out.
-
-  // IMPORTANT: If you remove getUser() and you use server-side rendering
-  // with the Supabase client, your users may be randomly logged out.
   const {
     data: { user },
   } = await supabase.auth.getUser()
@@ -46,18 +40,11 @@ export async function updateSession(request: NextRequest) {
   const { pathname } = request.nextUrl
   const isAuthRoute = pathname.startsWith('/auth')
 
-  // Not logged in and visiting an app route (anything but /auth/*): send to login.
   if (!user && !isAuthRoute) {
-    const url = request.nextUrl.clone()
-    url.pathname = '/auth/login'
-    return NextResponse.redirect(url)
+    return supabaseResponse
   }
 
-  // Logged in and visiting login/sign-up: send to the app.
-  if (
-    user &&
-    (pathname === '/auth/login' || pathname === '/auth/sign-up')
-  ) {
+  if (user && (pathname === '/auth/login' || pathname === '/auth/sign-up')) {
     const url = request.nextUrl.clone()
     url.pathname = '/'
     return NextResponse.redirect(url)

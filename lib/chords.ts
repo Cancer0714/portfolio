@@ -147,3 +147,7 @@ export const CHORD_SECTIONS: ChordSection[] = [
     chords: ['Gm', 'Am', 'Bb', 'Cm', 'Dm', 'Eb', 'F'],
   },
 ]
+
+export const SUGGESTION_CHORDS: ChordName[] = Array.from(
+  new Set(CHORD_SECTIONS.flatMap((section) => section.chords)),
+)
