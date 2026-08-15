@@ -1,15 +1,25 @@
 <h1>アプリ概要</h1>
-<br>ワンクリック操作で、和音を簡単に組み立てられるアプリ
+<br>Next.jsとSupabaseを用いて作成した、音楽知識のない人でもコード進行を簡単に組み立てられるアプリです。
 <h1>設計ドキュメント</h1>
 <br>[要件定義・基本設計・詳細設計の一覧_Googleスプレッドシート](https://docs.google.com/spreadsheets/d/1a9OvSv8_YOCDU5frkIitncBvOq4bCQJL78d_ViD5lyA/edit?usp=sharing)
+<br>[テスト設計・実施/追加機能テスト実施書_Google巣プレっとシート](https://docs.google.com/spreadsheets/d/1v-X855_YKpmca0BavUy4Gc9532Dzpo3kNtdpMRLs8QA/edit?usp=sharing)
 <h1>サイトURL</h1>
 <br>https://chordscreate.vercel.app/
 <h1>サイトイメージ</h1>
 <img src="https://raw.githubusercontent.com/Cancer0714/portfolio/main/docs/%E3%82%A2%E3%83%97%E3%83%AA%E7%94%BB%E9%9D%A2.png" alt="アプリ画面" />
 <h1>使用技術</h1>
-Next.js、supabase、Tone.js
+<br>フロントエンド：Next.js v16.2.6
+<br>バックエンド：Next.js v16.2.6
+<br>データベース：Supabse
+<br>デプロイ：Vercel
+<br>バージョン管理：Git,GitHub
+<br>テスト・デバック：VS Code,Vercel
+<br>CI/CD：GitHub Actions、Vercel
 <h1>機能一覧</h1>
-<br>・C、F、Gメジャー/マイナーのダイアトニックコードをワンクリックで鳴らす
-<br>・任意のコードを選択し、コード進行として組み立てる
-<br>・組み立てたコード進行を再生
-<br>・気に入ったコード進行を保存し、いつでも再生できる
+<br>・C、F、Gメジャー/マイナーのダイアトニックコードをワンクリックで鳴らせる
+<br>・チャットポットを使って、自分が作りたいコード進行を簡単に作成
+<br>・気に入ったコード進行を再生/保存し、いつでも参照できる
+<h1>ゲストログイン</h1>
+<br>コードの保存を行いたい場合、以下のゲストユーザーをお使いください。
+<br>ID:chordpad.tester@gmail.com
+<br>Password:chordcreate
