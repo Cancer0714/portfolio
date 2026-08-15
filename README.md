@@ -3,8 +3,11 @@
 <h1>設計ドキュメント</h1>
 <br>[要件定義・基本設計・詳細設計の一覧_Googleスプレッドシート](https://docs.google.com/spreadsheets/d/1a9OvSv8_YOCDU5frkIitncBvOq4bCQJL78d_ViD5lyA/edit?usp=sharing)
 <h1>サイトURL</h1>
-<br>
+<br>https://chordscreate.vercel.app/
+<h1>サイトイメージ</h1>
+<img src="https://raw.githubusercontent.com/Cancer0714/portfolio/main/docs/%E3%82%A2%E3%83%97%E3%83%AA%E7%94%BB%E9%9D%A2.png" alt="アプリ画面" />
 <h1>使用技術</h1>
+Next.js、supabase、Tone.js
 <h1>機能一覧</h1>
 <br>・C、F、Gメジャー/マイナーのダイアトニックコードをワンクリックで鳴らす
 <br>・任意のコードを選択し、コード進行として組み立てる
