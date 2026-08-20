@@ -2,7 +2,7 @@
 
 import { useCallback, useRef, useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
-import { Delete, ListMusic, LogOut, Play, Save, Send, Square, Trash2 } from 'lucide-react'
+import { Delete, ListMusic, LogIn, LogOut, Play, Save, Send, Square, Trash2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ChordPad } from '@/components/chord-pad'
 import { ProgressionBar } from '@/components/progression-bar'
@@ -19,6 +19,9 @@ type ChordAppProps = {
   isAuthenticated: boolean
   initialProgressions: Progression[]
 }
+
+const MIN_VOLUME_DB = -30
+const MAX_VOLUME_DB = 6
 
 function normalizeSuggestedChords(value: unknown): ChordName[] {
   const raw = Array.isArray(value) ? value : []
@@ -39,7 +42,7 @@ export function ChordApp({
   const [isPlaying, setIsPlaying] = useState(false)
   const [message, setMessage] = useState<string | null>(null)
   const [waveform, setWaveform] = useState<Waveform>('triangle')
-  const [volume, setVolume] = useState<number>(-8)
+  const [volumeLevel, setVolumeLevel] = useState<number>(22)
   const [aiPrompt, setAiPrompt] = useState('')
   const [aiSuggestion, setAiSuggestion] = useState<ChordName[]>([])
   const [aiLoading, setAiLoading] = useState(false)
@@ -61,12 +64,12 @@ export function ChordApp({
 
   const handleChordClick = useCallback(
     (chord: ChordName) => {
-      void playChord(chord, '0.8n', waveform, volume)
+      void playChord(chord, '0.8n', waveform, volumeLevel + MIN_VOLUME_DB)
       flashActive(chord)
       setChords((prev) => [...prev, chord])
       setMessage(null)
     },
-    [flashActive, volume, waveform],
+    [flashActive, volumeLevel, waveform],
   )
 
   const stopPlayback = useCallback(() => {
@@ -88,7 +91,7 @@ export function ChordApp({
       playbackRef.current = await playSequence(list, {
         bpm: 90,
         waveform,
-        volume,
+        volume: volumeLevel + MIN_VOLUME_DB,
         onStep: (index) => {
           setPlayingIndex(index)
           if (index === null) {
@@ -98,7 +101,7 @@ export function ChordApp({
         },
       })
     },
-    [stopPlayback, volume, waveform],
+    [stopPlayback, volumeLevel, waveform],
   )
 
   const handleDeleteLast = useCallback(() => {
@@ -225,7 +228,12 @@ export function ChordApp({
             <Button variant="ghost" size="icon" onClick={handleLogout} aria-label="ログアウト">
               <LogOut className="size-4" />
             </Button>
-          ) : null}
+          ) : (
+            <Button variant="outline" onClick={() => router.push('/auth/login')}>
+              <LogIn className="size-4" />
+              ログイン
+            </Button>
+          )}
         </div>
       </header>
 
@@ -254,15 +262,15 @@ export function ChordApp({
           <input
             id="volume"
             type="range"
-            min={-30}
-            max={6}
+            min={0}
+            max={MAX_VOLUME_DB - MIN_VOLUME_DB}
             step={1}
-            value={volume}
-            onChange={(event) => setVolume(Number(event.target.value))}
+            value={volumeLevel}
+            onChange={(event) => setVolumeLevel(Number(event.target.value))}
             className="w-full accent-violet-500"
             aria-label="音量調整"
           />
-          <span className="w-10 text-right text-xs text-muted-foreground">{volume}dB</span>
+          <span className="w-10 text-right text-xs text-muted-foreground">{volumeLevel}</span>
         </div>
       </section>
 

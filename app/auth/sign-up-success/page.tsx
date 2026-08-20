@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import Link from 'next/link'
 
 export default function Page() {
   return (
@@ -19,6 +20,12 @@ export default function Page() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               登録が完了しました。ログインする前に、確認メール内のリンクをクリックしてアカウントを有効化してください。
             </p>
+            <Link
+              href="/"
+              className="mt-4 block text-center text-sm text-foreground underline underline-offset-4"
+            >
+              トップページへ戻る
+            </Link>
           </CardContent>
         </Card>
       </div>

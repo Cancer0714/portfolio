@@ -116,6 +116,11 @@ export default function Page() {
                   新規登録
                 </Link>
               </div>
+              <div className="mt-3 text-center text-sm">
+                <Link href="/" className="text-foreground underline underline-offset-4">
+                  トップページへ戻る
+                </Link>
+              </div>
             </form>
           </CardContent>
         </Card>
