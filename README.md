@@ -3,7 +3,7 @@
 <h1>サイトURL</h1>
 https://chordscreate.vercel.app/
 <h1>サイトイメージ</h1>
-<img src="https://raw.githubusercontent.com/Cancer0714/portfolio/main/docs/%E3%82%A2%E3%83%97%E3%83%AA%E7%94%BB%E9%9D%A2.png" alt="アプリ画面" />
+<img src="https://github.com/Cancer0714/portfolio/blob/f93d12772e5f02fdb7a921813a918da98dcb75ef/docs/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8.png" alt="アプリ画面" />
 <h1>アプリの使い方</h1>
 ボタンをクリックすると、そのボタンに書かれているコード音が鳴ります。
 <br>クリックしたコードは、画面下にあるコード進行欄に記憶され、連続して再生することができます。
@@ -25,6 +25,6 @@ https://chordscreate.vercel.app/
 <br>バージョン管理：Git,GitHub
 <br>テスト・デバック：VS Code,Vercel
 <br>CI/CD：GitHub Actions、Vercel
-h1>設計ドキュメント</h1>
+<h1>設計ドキュメント</h1>
 <a href="https://docs.google.com/spreadsheets/d/1a9OvSv8_YOCDU5frkIitncBvOq4bCQJL78d_ViD5lyA/edit?usp=sharing" target="_blank">要件定義・基本設計・詳細設計の一覧_Googleスプレッドシート</a>
 <br><a href="https://docs.google.com/spreadsheets/d/1v-X855_YKpmca0BavUy4Gc9532Dzpo3kNtdpMRLs8QA/edit?usp=sharing" target="_blank">テスト設計・実施/追加機能テスト実施書_Googleスプレットシート</a>
